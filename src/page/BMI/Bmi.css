@@ -1,0 +1,129 @@
+.bmi-container {
+   width: 100%;
+   height: 75vh;
+   margin: 0 auto;
+   padding: 25px 2rem;
+   font-family: Arial, sans-serif;
+   color: #333;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+.main-con {
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.bmi-title {
+   text-align: left;
+   color: white;
+   font-size: 4rem;
+   font-weight: bold;
+}
+
+.sliders {
+   display: flex;
+   flex-direction: column;
+   width: 30%;
+}
+
+.slider-container {
+   margin: 20px 0;
+   width: 100%;
+}
+
+.slider-container h3 {
+   color: var(--orange);
+   font-size: 2rem;
+   margin-bottom: 10px;
+}
+
+input[type="range"] {
+   width: 100%;
+   margin: 10px 0;
+
+   accent-color: var(--orange);
+}
+
+.slider-value {
+   font-size: 20px;
+   color: white;
+   font-weight: bold;
+}
+
+.slider-container p {
+   font-size: 1.2rem;
+   color: white;
+}
+
+.bmi-result {
+   margin-top: 30px;
+   background-color: rgb(255, 233, 191);
+   padding: 30px;
+   border-radius: 10px;
+   width: 30%;
+}
+
+.bmi-value {
+   font-size: 30px;
+   font-weight: bold;
+   color: #333;
+}
+
+.bmi-button {
+   margin-top: 20px;
+   background-color: var(--orange);
+   color: rgb(255, 233, 191);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.bmi-button:hover {
+   background-color: rgb(255, 233, 191);
+   border: 1px solid var(--orange);
+   color: var(--orange);
+}
+
+.bmi-progress {
+   width: 82%;
+   height: 40px;
+   background: linear-gradient(to right,
+         rgb(253, 218, 153) 0%,
+         rgb(253, 200, 101),
+         var(--orange) 50%,
+         red 100%
+      );
+   position: relative;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+.bmi-indicator {
+   position: absolute;
+   top: 0;
+   height: 100%;
+   width: 5px;
+   background: black;
+   left: calc(var(--bmi-percent, 0) * 1%);
+   border-radius: 2px;
+   transition: left 0.5s ease;
+}
+
+.bmi-prog-text {
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+   display: flex;
+   width: 82%;
+   justify-content: space-between;
+}
+
+.bmi-prog-text span {
+   color: white;
+   font-size: 1.2rem;
+}

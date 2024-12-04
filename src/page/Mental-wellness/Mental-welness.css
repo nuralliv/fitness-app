@@ -1,0 +1,223 @@
+.h-name {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 3rem;
+}
+
+.mental-wellness>.h-name>h1 {
+   font-size: 4rem;
+   text-transform: uppercase;
+   color: white;
+   font-weight: bold;
+   margin-left: 3.7rem;
+   display: flex;
+   width: 100%;
+   gap: 1.5rem;
+   align-items: center;
+}
+
+.mental-wellness .h-name h3 {
+   margin-left: 3.7rem;
+
+   font-size: 2rem;
+   background: linear-gradient(180deg, #ffa739, #fa5042);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.mental-wellness .h-name p {
+   font-size: 1.2rem;
+   font-weight: 500;
+   margin-left: 3.7rem;
+   width: 70%;
+   color: white;
+}
+
+.mental-wellness-content {
+   width: 100%;
+   display: flex;
+   height: fit-content;
+   gap: 2rem;
+   justify-content: center;
+   margin: 0 3.7rem;
+
+}
+
+.mental-wellness-content-left {
+   width: 35%;
+   height: 600px;
+   border-radius: 10px;
+   background-color: #2d3036;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.mental-wellness-content-left p {
+   font-weight: 600;
+   color: white;
+   font-size: 1.2rem;
+   padding: 2rem 2.5rem 0 2.5rem;
+
+}
+
+.mental-wellness-content-right {
+   width: 35%;
+   height: 600px;
+   border-radius: 10px;
+   background-color: #2d3036;
+}
+
+.mental-wellness-content-left .main-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.mental-wellness-content-left .main-content h1 {
+   font-size: 5rem;
+   height: 6.5rem;
+   display: flex;
+   align-items: flex-end;
+}
+
+.mental-wellness-content-left .main-content h3 {
+   margin-top: -1.5rem;
+   color: white;
+   font-size: 2rem;
+}
+
+.lowest-part {
+   font-size: 1rem;
+   color: white;
+   padding: 0 2.5rem 2rem 2.5rem;
+}
+
+/* right */
+
+.mental-wellness-content-right {
+   width: 35%;
+   height: 600px;
+   border-radius: 10px;
+   background-color: #2d3036;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.mental-wellness-content-right p {
+   font-weight: 600;
+   color: white;
+   font-size: 1.2rem;
+   padding: 2rem 2.5rem 0 2.5rem;
+
+}
+
+.mental-wellness-content-right {
+   width: 35%;
+   height: 600px;
+   border-radius: 10px;
+   background-color: #2d3036;
+}
+
+.mental-wellness-content-right .main-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: -5rem;
+
+}
+
+.mental-wellness-content-right .main-content h1 {
+   font-size: 5rem;
+   height: 6.5rem;
+   display: flex;
+   align-items: flex-end;
+}
+
+.mental-wellness-content-right .main-content h3 {
+   color: white;
+   font-size: 2rem;
+}
+
+.lowest-part {
+   font-size: 1rem;
+   color: white;
+   padding: 0 2.5rem 2rem 2.5rem;
+}
+
+.imgs {
+   display: flex;
+
+}
+
+.imgs img {
+   height: 100px;
+}
+
+.mental-lowest {
+   margin-top: 2rem;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.mental-lowest-title {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.mental-lowest-title h2 {
+   color: white;
+   font-size: 2.5rem;
+}
+
+.mental-lowest-title h3 {
+   color: white;
+   font-weight: 400;
+   width: 70%;
+   text-align: center;
+}
+
+.block-list {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 4rem 10rem;
+   width: 1000px;
+   margin-left: 5rem;
+}
+
+.block {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 250px;
+   gap: 0.5rem;
+
+}
+
+.block p strong {
+   color: white;
+}
+
+.block p {
+   font-size: 1.3rem;
+   color: rgb(179, 177, 177);
+}
+
+.block img {
+   height: 60px;
+   width: 60px;
+}

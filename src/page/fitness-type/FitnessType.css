@@ -1,0 +1,61 @@
+.programs-fitness {
+   min-height: 50vh;
+   width: 100%;
+
+}
+
+.programs-fitness h1 {
+   font-size: 4rem;
+   text-transform: uppercase;
+   color: white;
+   font-weight: bold;
+   margin-bottom: 1rem;
+   display: flex;
+   width: 100%;
+   gap: 1.5rem;
+   font-style: italic;
+   align-items: center;
+   justify-content: center;
+   
+
+}
+
+.filters {
+   margin-left: 3.7rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+
+.filters-content>button {
+
+   padding: 0.5rem 2rem;
+   font-size: 1rem;
+   border: 0;
+   background-color: var(--orange);
+   color: white;
+
+}
+
+.filters-content>button:hover {
+   cursor: pointer;
+   background-color: rgb(255, 229, 181);
+   color: var(--orange);
+}
+
+.activeBtn {
+   cursor: pointer;
+   background-color: rgb(255, 229, 181);
+   color: var(--orange);
+}
+
+.prog-list {
+   margin-top: 1.5rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 2.6rem;
+}

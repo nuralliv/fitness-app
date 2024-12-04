@@ -1,0 +1,60 @@
+.recipe h1 {
+   font-size: 4rem;
+   text-transform: uppercase;
+   color: white;
+   font-weight: bold;
+   margin-bottom: 1rem;
+   width: 100%;
+   gap: 1.5rem;
+   font-style: italic;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.recipe .filters {
+   margin-left: 3.7rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+
+}
+
+.filters-content {
+   display: flex;
+   gap: 1rem;
+}
+
+.filters-content>button {
+
+   padding: 0.5rem 2rem;
+   font-size: 1rem;
+   border: 0;
+   background-color: var(--orange);
+   color: white;
+
+}
+
+.meal-list {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   gap: 2rem;
+   justify-content: center;
+   margin-top: 2rem;
+}
+
+.filters-content button:hover {
+   cursor: pointer;
+   background-color: transparent;
+   border: 1px solid var(--orange);
+   color: white;
+}
+
+.filters-content button.activeBtn {
+   cursor: pointer;
+   background-color: transparent;
+   border: 1px solid var(--orange);
+   color: white;
+}

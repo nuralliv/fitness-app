@@ -1,0 +1,97 @@
+.prog {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 375px;
+   height: 390px;
+   background-color: white;
+   color: #44443b;
+   text-decoration: none;
+
+}
+
+
+.prog img {
+   height: 250px;
+   object-position: top;
+   width: 100%;
+   object-fit: cover;
+}
+
+.prog h3 {
+   font-size: 1.3rem;
+   text-align: left;
+   margin: 0 10px 1rem 10px;
+}
+
+.prog .level {
+   display: flex;
+   align-items: center;
+   padding: 10px 0 0 0;
+   width: 100%;
+   font-size: 0.9rem;
+   font-weight: 600;
+   gap: 10px;
+   align-items: center;
+}
+
+.prog .level span {
+   margin-left: 1rem;
+
+}
+
+.course-st {
+   color: black;
+   font-weight: 500;
+   width: 100%;
+   display: flex;
+   font-size: 1.5rem;
+   justify-content: flex-start;
+   align-items: center;
+   margin-left: 1rem;
+}
+
+.description {
+   font-size: 1rem;
+   text-align: center;
+   margin: 1rem 10px 1rem 10px;
+   color: black;
+}
+
+.prog strong {
+   -webkit-text-stroke-width: 0.2px;
+   -webkit-text-stroke-color: var(--orange);
+}
+
+.prog-time {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-left: 1rem;
+}
+
+.prog-time span {
+   font-size: 1.2rem;
+   font-weight: 500;
+}
+
+.prog-lowest {
+   position: absolute;
+   bottom: 1rem;
+   margin-top: 2rem;
+   display: flex;
+   align-items: center;
+   width: 90%;
+   justify-content: space-between;
+   margin-right: 2rem;
+}
+
+.prog-lowest button {
+   font-size: 1.1rem;
+   padding: 0.2rem 1rem;
+   background-color: transparent;
+   border: 1px solid var(--orange);
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
