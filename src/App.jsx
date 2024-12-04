@@ -16,9 +16,9 @@ function App() {
     <div className='App'>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/fitness-app' element={<Home />} />
         <Route path='/bmi' element={<Bmi />} />
-        <Route path='/programs' element={<FitnessType />} />
+        <Route path='/fittype' element={<FitnessType />} />
         <Route path="/fitprog/:id" element={<FitProg />} />
         <Route path='/mentwell' element={<MentalWellness />} />
         <Route path='/recipe' element={<Recipe />} />

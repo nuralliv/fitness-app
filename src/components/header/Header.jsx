@@ -7,10 +7,10 @@ const Header = () => {
          <Link to={'/'}>         <img className='logo' src={Logo} alt="" />
          </Link>
          <ul className='header-menu'>
-            <Link to='/' className='nav-link'>
+            <Link to='/fitness-app' className='nav-link'>
                Home
             </Link>
-            <Link to='/programs' className='nav-link'>Programs</Link>
+            <Link to='/fittype' className='nav-link'>Programs</Link>
 
             <Link to='/bmi' className='nav-link'>
                BMI Calculator
