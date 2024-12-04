@@ -18,6 +18,8 @@ const Header = () => {
 
             <Link to={'/mentwell'} className='nav-link'>Mental Wellness</Link>
             <Link to={'/recipe'} className='nav-link'>Recipes</Link>
+            <Link to={'/forum'} className='nav-link'>Forum</Link>
+
 
          </ul>
          <button className='btn'>Join now </button>
