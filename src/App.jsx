@@ -2,7 +2,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/Footer'
-import Header from './components/header/header'
 import Bmi from './page/BMI/Bmi'
 import Home from './page/home/Home'
 import FitnessType from './page/fitness-type/FitnessType'
@@ -10,6 +9,7 @@ import FitProg from './page/Fit-prog/FitProg'
 import MentalWellness from './page/Mental-wellness/MentalWellness'
 import Recipe from './page/Recipe/Recipe'
 import Forum from './page/forum/Forum'
+import Header from './components/header/Header'
 function App() {
 
   return (
