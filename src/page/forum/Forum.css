@@ -1,76 +1,74 @@
-.forum-page{
-   min-height: 85vh;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   list-style: none;
+
+
+.forum-page {
+   padding: 2rem;
+   max-width: 800px;
+   margin: auto;
 }
+
 .forum-page h1 {
-   color: white;
-   font-size: 3.5rem;
+   color: var(--orange);
+   text-align: center;
 }
-.question-all{
-   width: 40%;
-}
-.question-forum{
 
-   display: flex;
-   flex-direction: column;
-   gap: 0.5rem;
+.question-all {
+   margin-top: 1.5rem;
+   background-color: var(--background-light);
+   border-radius: 8px;
+   padding: 1rem;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-.question-forum input {
-   height: 2.5rem;
+
+.question-forum input,
+.question-forum textarea,
+.reply-forum input,
+.reply-forum textarea {
+   width: 100%;
+   margin: 0.5rem 0;
+   padding: 0.5rem;
    border: 1px solid var(--orange);
-   font-size: 1.1rem;
-   padding-left: 2rem;
+   border-radius: 5px;
 }
 
-.question-forum textarea{
-   padding-top: 1rem;
-   height: 5rem;
-   font-size: 1.1rem;
-   text-indent: 2rem;
-}
-.question-forum button {
+.question-forum button,
+.reply-forum button {
    background-color: var(--orange);
-   height: 2.5rem;
-   border: 0;
    color: white;
-}
-.question-all p {
-   color: white;
+   border: none;
+   padding: 0.5rem;
+   border-radius: 5px;
+   cursor: pointer;
 }
 
 .answer {
-   margin-top: 0.5rem;
-   background-color: white;
+   margin: 1rem 0;
    padding: 1rem;
-}
-.answer p {
-   color: var(--orange);
-}
-.answer button {
-   margin-top: 10px;
-   padding: 0.5rem 1rem;
+   background-color: var(--background-light);
    border: 1px solid var(--orange);
-   background-color: transparent;
+   border-radius: 5px;
+}
 
-}
-.reply-forum {
+.question-header {
    display: flex;
-   width: 70%;
-   flex-direction: column;
+   justify-content: space-between;
    align-items: center;
-   margin-left: 15%;
 }
-.reply-forum input {
-   height: 2rem;
-   width: 100%;
-   font-size: 1.1rem;
+
+.delete-btn,
+.delete-btn-small {
+   background-color: transparent;
+   color: red;
+   border: none;
+   font-size: 1rem;
+   cursor: pointer;
 }
-.reply-forum  textarea{
-   width: 100%;
-   font-size: 1.1rem;
+
+ul {
+   padding-left: 20px;
+}
+
+.reply-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }

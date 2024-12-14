@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import './Forum.css'
+import './Forum.css';
 import axios from 'axios';
 
 const Forum = () => {
    const [questions, setQuestions] = useState([]);
    const [newQuestion, setNewQuestion] = useState('');
-   const [name, setName] = useState('');
+   const [questionName, setQuestionName] = useState('');
    const [reply, setReply] = useState('');
-   const [selectedQuestion, setSelectedQuestion] = useState(null);
+   const [replyName, setReplyName] = useState('');
+   const [expandedQuestion, setExpandedQuestion] = useState(null); // Хранит ID вопроса с видимыми ответами
    const API_URL = 'https://6750be1869dc1669ec1c295a.mockapi.io/ques';
 
    // Fetch questions
@@ -20,12 +21,12 @@ const Forum = () => {
 
    // Add new question
    const addQuestion = () => {
-      if (name && newQuestion) {
-         const newEntry = { name, question: newQuestion, replies: [] };
+      if (questionName && newQuestion) {
+         const newEntry = { name: questionName, question: newQuestion, replies: [] };
          axios.post(API_URL, newEntry).then((response) => {
             setQuestions([...questions, response.data]);
             setNewQuestion('');
-            setName('');
+            setQuestionName('');
          });
       } else {
          alert('Please provide both your name and a question!');
@@ -34,19 +35,42 @@ const Forum = () => {
 
    // Add a reply
    const addReply = (id) => {
-      if (name && reply) {
+      if (replyName && reply) {
          const question = questions.find((q) => q.id === id);
-         const updatedReplies = [...question.replies, `${name}: ${reply}`];
+         const updatedReplies = [...question.replies, `${replyName}: ${reply}`];
          axios.put(`${API_URL}/${id}`, { ...question, replies: updatedReplies }).then(() => {
             setQuestions(
                questions.map((q) => (q.id === id ? { ...q, replies: updatedReplies } : q))
             );
             setReply('');
-            setName('');
+            setReplyName('');
          });
       } else {
          alert('Please provide your name and a reply!');
       }
+   };
+
+   // Delete a question
+   const deleteQuestion = (id) => {
+      axios.delete(`${API_URL}/${id}`).then(() => {
+         setQuestions(questions.filter((q) => q.id !== id));
+      });
+   };
+
+   // Delete a reply
+   const deleteReply = (id, index) => {
+      const question = questions.find((q) => q.id === id);
+      const updatedReplies = question.replies.filter((_, i) => i !== index);
+      axios.put(`${API_URL}/${id}`, { ...question, replies: updatedReplies }).then(() => {
+         setQuestions(
+            questions.map((q) => (q.id === id ? { ...q, replies: updatedReplies } : q))
+         );
+      });
+   };
+
+   // Toggle visibility of replies
+   const toggleReplies = (id) => {
+      setExpandedQuestion((prev) => (prev === id ? null : id));
    };
 
    return (
@@ -59,8 +83,8 @@ const Forum = () => {
                <input
                   type="text"
                   placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={questionName}
+                  onChange={(e) => setQuestionName(e.target.value)}
                />
                <textarea
                   placeholder="Ask a question..."
@@ -73,33 +97,39 @@ const Forum = () => {
             {questions.length > 0 ? (
                questions.map((q) => (
                   <div className='answer' key={q.id}>
-                     <h3>{q.name}</h3>
-                     <p>{q.question}</p>
-                     <ul>
-                        {q.replies.map((r, index) => (
-                           <li key={index}>{r}</li>
-                        ))}
-                     </ul>
-                     <button onClick={() => setSelectedQuestion(q.id)}>
-                        Reply
-                     </button>
+                     <div className="question-header">
+                        <h3 onClick={() => toggleReplies(q.id)} style={{ cursor: 'pointer' }}>
+                           {q.name}: {q.question}
+                        </h3>
+                        <button onClick={() => deleteQuestion(q.id)} className="delete-btn">Delete</button>
+                     </div>
 
-                     {/* Add Reply */}
-                     {selectedQuestion === q.id && (
-                        <div className='reply-forum'>
-                           <input
-                              type="text"
-                              placeholder="Your name"
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                           />
-                           <textarea
-                              placeholder="Write your reply..."
-                              value={reply}
-                              onChange={(e) => setReply(e.target.value)}
-                           />
-                           <button onClick={() => addReply(q.id)}>Post Reply</button>
-                        </div>
+                     {/* Replies */}
+                     {expandedQuestion === q.id && (
+                        <>
+                           <ul>
+                              {q.replies.map((r, index) => (
+                                 <li key={index} className="reply-item">
+                                    {r}
+                                    <button onClick={() => deleteReply(q.id, index)} className="delete-btn-small">x</button>
+                                 </li>
+                              ))}
+                           </ul>
+                           <div className='reply-forum'>
+                              <input
+                                 type="text"
+                                 placeholder="Your name"
+                                 value={replyName}
+                                 onChange={(e) => setReplyName(e.target.value)}
+                              />
+                              <textarea
+                                 placeholder="Write your reply..."
+                                 value={reply}
+                                 onChange={(e) => setReply(e.target.value)}
+                              />
+                              <button onClick={() => addReply(q.id)}>Post Reply</button>
+                           </div>
+                        </>
                      )}
                   </div>
                ))
@@ -107,7 +137,6 @@ const Forum = () => {
                <p>No questions available. Be the first to ask!</p>
             )}
          </div>
-         
       </div>
    );
 };
